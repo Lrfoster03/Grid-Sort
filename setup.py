@@ -7,7 +7,7 @@ setup(
     name="grid-sort",
     version="0.1.0",
     author="Lrfoster03",
-    author_email="lrfoster03@gmail.com",  # Update this with your email
+    author_email="lrfoster03@gmail.com",
     description="A package for sorting 2D points into rows",
     long_description=long_description,
     long_description_content_type="text/markdown",

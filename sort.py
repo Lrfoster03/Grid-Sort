@@ -1,5 +1,22 @@
 import copy
 import math
+from dataclasses import dataclass
+
+@dataclass
+class Location:
+    x: float
+    y: float
+
+@dataclass
+class LED:
+    r: float
+    g: float
+    b: float
+    hue: float
+    intensity: float
+    sample_percent: float
+    location: Location
+
 
 def find_xy_container(obj):
     """Find the first object that has X/x and Y/y attributes (case-insensitive)."""
@@ -140,27 +157,13 @@ def main():
         def __repr__(self):
             return f"Point(x={self.x}, y={self.y})"
 
-    # points = [
-    #     Point(1, 2),
-    #     Point(3, 1),
-    #     Point(2, 2),
-    #     Point(0, 0),
-    #     Point(1, 1),
-    #     Point(2, 0),
-    #     Point(3, 0),
-    #     Point(0, 1)
-    # ]
+    # Test with more complex data structures
     points = [
-        Point(1, 2),
-        Point(1, 5),
-        Point(2, 1),
-        Point(2, 2),
+        LED(r=255.0, g=100.0, b=50.0, hue=120.0, intensity=0.85, sample_percent=0.5, location= Location(x=1, y=2)),
+        LED(r=255.0, g=100.0, b=50.0, hue=120.0, intensity=0.85, sample_percent=0.5, location= Location(x=10, y=0)),
+        LED(r=255.0, g=100.0, b=50.0, hue=120.0, intensity=0.85, sample_percent=0.5, location= Location(x=5, y=2.00)),
     ]
-    points = [
-        Point(0, 0),
-        Point(10, 0),
-        Point(5, 2.0),
-    ]
+
     sorted_points = sort_by_xy(points, 0.5)
     for p in sorted_points:
         print(p)

@@ -89,6 +89,7 @@ class TestSortModule(unittest.TestCase):
         coords = [sort.get_xy(o) for o in res]
         # duplicates with same coords should appear before (2,2)
         self.assertEqual(coords[:2], [(1, 1), (1, 1)])
+        self.assertEqual(len(coords), 3)
 
     def test_multi_row(self):
         # two horizontal rows: y=0 (top) and y=10 (below)
